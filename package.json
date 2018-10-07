@@ -1,0 +1,19 @@
+{
+  "name": "liangck_website",
+  "version": "1.0.0",
+  "description": "Hello Koa 2 example with async",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "keywords": [
+    "koa",
+    "async"
+  ],
+  "author": "Liangck",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "koa": "^2.5.3",
+    "koa-router": "^7.4.0"
+  }
+}
