@@ -1,19 +1,20 @@
 {
   "name": "liangck_website",
   "version": "1.0.0",
-  "description": "Hello Koa 2 example with async",
+  "description": "Liangck website server",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "cheerio": "node cheerio.js"
   },
   "keywords": [
-    "koa",
+    "node server",
     "async"
   ],
   "author": "Liangck",
   "license": "Apache-2.0",
   "dependencies": {
-    "koa": "^2.5.3",
-    "koa-router": "^7.4.0"
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.16.3"
   }
 }
