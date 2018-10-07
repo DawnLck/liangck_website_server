@@ -1,11 +1,14 @@
 const express = require('express');
+const path = require('path');
 const blogCheerio = require('./blogCheerio').getBlogs;
 
 const app = express();
 
 app.get('/', function (req, res) {
-  res.send('Hello World');
+  res.sendFile(path.join(__dirname, 'dist/index.html'));
 });
+
+app.use(express.static('dist'));
 
 app.get('/getBlogs', function (req, res) {
   blogCheerio().then((result)=>{
