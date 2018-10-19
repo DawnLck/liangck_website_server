@@ -22,5 +22,6 @@ app.get('/getBlogs', function (req, res) {
 let server = app.listen(8086, function () {
   let host = server.address().address;
   let port = server.address().port;
-  console.log(`服务器已经开启，访问地址为http://${host}:${port}`);
+  console.log(`服务器已经开启，访问地址为 http://${host}:${port}`);
+  console.log(`服务器模式： ${process.env.NODE_ENV}`)
 });
