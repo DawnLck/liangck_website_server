@@ -17,10 +17,11 @@ module.exports.getBlogs = function () {
       res.on("end", function () {
         let $ = cheerio.load(strHtml);
         $(".stream-list.blog-stream section").each((item, i) => {
+          $(i).find('ul.author a').remove();
           results.push({
             title: $(i).find('h2').text() || 'Error',
             url: `https://segmentfault.com${$(i).find('h2 a').attr('href')}`,
-            time: /[01]?\d月[0-3]?\d日/gi.exec($(i).find('.author').text())[0] || $(i).find('.author').text() || 'Error',
+            time: $(i).find('ul.author li').first().text().trim() || 'Error',
             abstract: $(i).find('p').text() || 'Error',
             zan: $(i).find('.stream__item-zan-number').text() || 'Error'
           })

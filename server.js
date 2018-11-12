@@ -4,6 +4,16 @@ const blogCheerio = require('./blogCheerio').getBlogs;
 
 const app = express();
 
+const allowCrossDomain = function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', 'http://localhost:8080');
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  res.header('Access-Control-Allow-Credentials','true');
+  next();
+};
+app.use(allowCrossDomain);
+
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'dist/index.html'));
 });
@@ -19,7 +29,11 @@ app.get('/getBlogs', function (req, res) {
   })
 });
 
-let server = app.listen(8086, function () {
+let port = 80;
+if (process.env.NODE_ENV === 'development') {
+  port = 8086;
+}
+let server = app.listen(port, function () {
   let host = server.address().address;
   let port = server.address().port;
   console.log(`服务器已经开启，访问地址为 http://${host}:${port}`);
