@@ -4,13 +4,11 @@
   "description": "Liangck website server",
   "main": "server.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=production nodemon server.js",
+    "develop": "cross-env NODE_ENV=develop nodemon server.js",
+    "production": "cross-env NODE_ENV=production nodemon server.js",
     "cheerio": "node cheerio.js"
   },
-  "keywords": [
-    "node server",
-    "async"
-  ],
+  "keywords": ["node server", "async"],
   "author": "Liangck",
   "license": "Apache-2.0",
   "dependencies": {
