@@ -8,11 +8,15 @@
     "production": "cross-env NODE_ENV=production nodemon server.js",
     "cheerio": "node cheerio.js"
   },
-  "keywords": ["node server", "async"],
+  "keywords": [
+    "node server",
+    "async"
+  ],
   "author": "Liangck",
   "license": "Apache-2.0",
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
+    "connect-history-api-fallback": "^1.6.0",
     "cross-env": "^5.2.0",
     "express": "^4.16.3"
   }
